@@ -1,7 +1,6 @@
 {
   "name": "dd_testing",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "wdio"
@@ -15,5 +14,6 @@
   "bugs": {
     "url": "https://github.com/JCornflower/DD_testing/issues"
   },
-  "homepage": "https://github.com/JCornflower/DD_testing#readme"
+  "homepage": "https://github.com/JCornflower/DD_testing#readme",
+  "description": ""
 }
