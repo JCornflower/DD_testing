@@ -1,0 +1,19 @@
+{
+  "name": "dd_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCornflower/DD_testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JCornflower/DD_testing/issues"
+  },
+  "homepage": "https://github.com/JCornflower/DD_testing#readme"
+}
