@@ -5,10 +5,34 @@ describe('it should get the homepage auth', () =>{
     it('should get the homepage auth',()=>{
         browser.url('https://datadynamo.local.zaraffasoft.com/');
         var logIn = $('.ui.yellow.small.button');
-        var value = logIn.getValue();
-        browser.debug();
+        var value = logIn.getText();
+        //browser.debug();
         console.log(value);
-        browser.click('.ui.yellow.small.button');
+        //browser.click('.ui.yellow.small.button');
 
     });
+
+    it('should get the login page', ()=>{
+        browser.url('https://datadynamo.local.zaraffasoft.com/');
+        var logIn = $('.ui.yellow.small.button');
+        logIn.click();
+        var url = browser.getUrl();
+        console.log(url);
+    });
+
+    it('should enter as superuser', ()=>{
+        browser.url('https://datadynamo.local.zaraffasoft.com/en/login');
+        // var submit=$('.ui.large.fluid.primary.button');
+        var submit=$('button.ui.large.fluid.primary.button');
+
+
+        browser.setValue('input[name="email"]','superuser@dataclassroom.com');
+        browser.setValue('input[name="password"]','changemesoon');
+        submit.click();
+        browser.waitForVisible('.ui.header', 5000);
+        var log2 = $('.ui.header');
+        var text = log2.getText();
+        console.log(text);
+    });
 });
+
