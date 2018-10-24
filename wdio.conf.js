@@ -1,5 +1,6 @@
 exports.config = {
-    
+    port: '9515',
+    path: '/',
     //
     // ==================
     // Specify Test Files
@@ -10,7 +11,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -111,7 +112,8 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    // services: [],//
+    services: 
+        ['chromedriver'],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
