@@ -41,8 +41,8 @@ describe('searching for dataset',()=>{
         browser.url('https://datadynamo.local.zaraffasoft.com/');
         var browse = $('.ui.button.dropdown.dd-item-type-select.pink');
         browse.click();
-        //var dropdown = $('.dd-dropdown-link');
-        var dataset = browse.selectByIndex(0);
-        dataset.click();
+        var dataset = $('.dd-dropdown-link');
+        chosen = dataset.selectByVisibleText('Datasets');
+        chosen.click();
     });
 });
