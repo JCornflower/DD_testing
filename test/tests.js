@@ -4,7 +4,7 @@ var client = webdriverio.remote(options);
 
 client
     .init()
-    .url('https://datadynamo.local.zaraffasoft.com/en')
+    .url('/')
 
 describe('it should get the homepage auth', () =>{
     var logIn = $('#ui yellow small button')
