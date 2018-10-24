@@ -36,3 +36,13 @@ describe('it should get the homepage auth', () =>{
     });
 });
 
+describe('searching for dataset',()=>{
+    it('go to dataswt page',()=>{
+        browser.url('https://datadynamo.local.zaraffasoft.com/');
+        var browse = $('.ui.button.dropdown.dd-item-type-select.pink');
+        browse.click();
+        //var dropdown = $('.dd-dropdown-link');
+        var dataset = browse.selectByIndex(0);
+        dataset.click();
+    });
+});
