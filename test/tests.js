@@ -1,12 +1,13 @@
-var webdriverio = require('webdriverio');
-var options = { desiredCapabilities: { browserName: 'chrome' } };
-var client = webdriverio.remote(options);
-
-client
-    .init()
-    .url('/')
+var assert = require('assert');
+var request = require('request');
 
 describe('it should get the homepage auth', () =>{
-    var logIn = $('#ui yellow small button')
-    logIn.click()
+    it('should get the homepage auth',()=>{
+        browser.url('https://datadynamo.local.zaraffasoft.com/');
+        var logIn = $('.ui.yellow.small.button');
+        var value = logIn.getValue();
+        browser.click('.ui.yellow.small.button');
+        console.log(value);
+
+    });
 });
