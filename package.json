@@ -15,5 +15,11 @@
     "url": "https://github.com/JCornflower/DD_testing/issues"
   },
   "homepage": "https://github.com/JCornflower/DD_testing#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "webdriverio": "^4.14.0"
+  },
+  "devDependencies": {
+    "wdio-mocha-framework": "^0.6.3"
+  }
 }
