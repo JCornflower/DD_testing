@@ -17,6 +17,7 @@
   "homepage": "https://github.com/JCornflower/DD_testing#readme",
   "description": "",
   "dependencies": {
+    "chai": "^4.2.0",
     "request-mocha": "^0.2.0",
     "webdriverio": "^4.14.0"
   },
