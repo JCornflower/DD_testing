@@ -53,7 +53,7 @@ describe('searching for dropdown elements',()=>{
     });
 });
 
-describe('dataset handling',() =>{
+describe('dataset getting',() =>{
     it('get dropdown element page',()=>{
         browser.url('https://datadynamo.local.zaraffasoft.com/');
         var browse = $('//*[@id="dd-header"]/div[3]/div/div/div/div[1]/div');
@@ -68,3 +68,19 @@ describe('dataset handling',() =>{
         expect(browser.getUrl()).to.equal('https://datadynamo.local.zaraffasoft.com/en/items/dataset');
     });
 });
+
+describe('dataset handling',() =>{
+    it('existing table',()=>{
+        browser.url('https://datadynamo.local.zaraffasoft.com/en/items/dataset');
+        expect($('.ui.celled.selectable.sortable.stackable.very.compact.table.dd-ctable').isExisting()).to.be.true;
+    });
+
+    it('columns quantity', ()=>{
+        browser.url('/');
+        var params = $$('.dd-items-table').filter((th)=>{
+            return th.isVisible;
+        });
+        expect(params.length).to.be.equal(5);
+    });
+});
+
