@@ -124,8 +124,8 @@ exports.config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 
-        ['mocha',
-        'chai'],
+        'mocha',
+    
     //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
@@ -160,7 +160,12 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // beforeSession: function (config, capabilities, specs) {
+    before: function() {
+    var chai = require('chai');
+    global.expect = chai.expect;
+    chai.Should();
+    }
+    //beforeSession: function (config, capabilities, specs) {
     // },
     /**
      * Gets executed before test execution begins. At this point you can access to all global

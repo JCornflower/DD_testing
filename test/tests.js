@@ -1,14 +1,19 @@
 var assert = require('assert');
 var request = require('request');
+var should = require('should');
+// var chai = require('chai'); 
+// var chaiWebdriver = require('chai-webdriverio').default;
+// chai.use(chaiWebdriver(browser)); 
+// var assert = chai.assert;    // Using Assert style
+//var expect = chai.expect;    // Using Expect style
+// var should = chai.should();
 
 describe('it should get the homepage auth', () =>{
     it('should get the homepage auth',()=>{
         browser.url('https://datadynamo.local.zaraffasoft.com/');
         var logIn = $('.ui.yellow.small.button');
         var value = logIn.getText();
-        //browser.debug();
         console.log(value);
-        //browser.click('.ui.yellow.small.button');
 
     });
 
@@ -37,12 +42,13 @@ describe('it should get the homepage auth', () =>{
 });
 
 describe('searching for dataset',()=>{
-    it('go to dataswt page',()=>{
+    it('go to dataset page',()=>{
         browser.url('https://datadynamo.local.zaraffasoft.com/');
-        var browse = $('.ui.button.dropdown.dd-item-type-select.pink');
+        var browse = $('//*[@id="dd-header"]/div[3]/div/div/div/div[1]/div');
         browse.click();
         var dataset = $('.dd-dropdown-link');
-        chosen = dataset.selectByVisibleText('Datasets');
-        chosen.click();
+        should.exist(dataset);
+        // chosen = dataset.selectByVisibleText('Datasets');
+        // chosen.click();
     });
 });
