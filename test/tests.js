@@ -41,14 +41,30 @@ describe('it should get the homepage auth', () =>{
     });
 });
 
-describe('searching for dataset',()=>{
-    it('go to dataset page',()=>{
+describe('searching for dropdown elements',()=>{
+    it('open dropdown',()=>{
         browser.url('https://datadynamo.local.zaraffasoft.com/');
         var browse = $('//*[@id="dd-header"]/div[3]/div/div/div/div[1]/div');
         browse.click();
-        var dataset = $('.dd-dropdown-link');
-        should.exist(dataset);
-        // chosen = dataset.selectByVisibleText('Datasets');
-        // chosen.click();
+        var counter = $$('.dd-dropdown-link').filter((href) => {
+            return href.isVisible();
+        });
+        expect(counter.length).to.be.equal(5);
+    });
+});
+
+describe('dataset handling',() =>{
+    it('get dropdown element page',()=>{
+        browser.url('https://datadynamo.local.zaraffasoft.com/');
+        var browse = $('//*[@id="dd-header"]/div[3]/div/div/div/div[1]/div');
+        browse.click();
+        var menu = $('//*[@id="dd-header"]/div[3]/div/div/div/div[1]/div/div[2]');
+        should.exist(menu);
+        var dataset = $('a[href="/en/items/dataset"]');
+        dataset.click();
+    });
+
+     it('url is equal to dataset page',()=>{
+        expect(browser.getUrl()).to.equal('https://datadynamo.local.zaraffasoft.com/en/items/dataset');
     });
 });
