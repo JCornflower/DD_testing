@@ -46,9 +46,11 @@ describe('searching for dropdown elements',()=>{
         browser.url('https://datadynamo.local.zaraffasoft.com/');
         var browse = $('//*[@id="dd-header"]/div[3]/div/div/div/div[1]/div');
         browse.click();
+        $('.dd-dropdown-link').waitForVisible();
         var counter = $$('.dd-dropdown-link').filter((href) => {
             return href.isVisible();
         });
+        //$$('.dd-dropdown-link').waitForVisible();
         expect(counter.length).to.be.equal(5);
     });
 });
@@ -76,11 +78,20 @@ describe('dataset handling',() =>{
     });
 
     it('columns quantity', ()=>{
-        browser.url('/');
-        var params = $$('.dd-items-table').filter((th)=>{
-            return th.isVisible;
-        });
-        expect(params.length).to.be.equal(5);
+        browser.url('https://datadynamo.local.zaraffasoft.com/en/items/dataset');
+        Tab = $('.ui.celled.selectable.sortable.stackable.very.compact.table.dd-ctable');
+        col = $$('th');
+        expect(col.length).to.be.equal(5);
     });
 });
+
+// describe('tooltips checking in table icons', ()=>{
+//     it('Manage this item',()=>{
+//         browser.url('https://datadynamo.local.zaraffasoft.com/en/items/dataset');
+//         Tab = $('.ui.celled.selectable.sortable.stackable.very.compact.table.dd-ctable');
+//         cell = $$('td'); 
+// //         icon = $$('i');
+// //         console.log(icon.length);
+// //     });
+// });
 
